@@ -1,0 +1,8 @@
+{
+  "appointmentDate": "2019-07-20",
+  "appointmentStatus": "SCHEDULED",
+  "client": "Alex Gordon",
+  "car": "Toyota Camry 2017",
+  "description": "Check engine light is on",
+  "price": 115.97
+}
