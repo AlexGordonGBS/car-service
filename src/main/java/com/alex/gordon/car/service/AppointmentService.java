@@ -6,10 +6,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class AppointmentService {
@@ -61,8 +61,14 @@ public class AppointmentService {
         }
     }
 
-    public List<AppointmentEntity> getByDateRange(Date fromDate, Date toDate) {
-        return appointmentRepo.findAllByAppointmentDateBetween(fromDate, toDate);
+    public List<AppointmentEntity> getByDateRange(String fromDate, String toDate) {
+        List<AppointmentEntity> entitiesAll = appointmentRepo.findAll();
+        List<AppointmentEntity> entitiesByRange = entitiesAll.stream()
+            .filter((e) -> e.getAppointmentDate() != null)
+            .filter((e) -> e.getAppointmentDate().compareTo(fromDate) >= 0 && e.getAppointmentDate().compareTo(toDate) <= 0)
+            .sorted((e1, e2) -> e1.getPrice().compareTo(e2.getPrice()))
+            .collect(Collectors.toList());
+        return entitiesByRange;
     }
 
 }

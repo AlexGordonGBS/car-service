@@ -5,7 +5,6 @@ import org.springframework.data.redis.core.index.Indexed;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
 import java.util.Objects;
 
 @RedisHash("Appointment")
@@ -13,7 +12,8 @@ public class AppointmentEntity {
 
     @Indexed
     private String id;
-    private Date appointmentDate;
+    @NotBlank
+    private String appointmentDate;
     @Indexed
     private AppointmentStatus appointmentStatus;
     @Indexed
@@ -74,11 +74,11 @@ public class AppointmentEntity {
         this.price = price;
     }
 
-    public Date getAppointmentDate() {
+    public String getAppointmentDate() {
         return appointmentDate;
     }
 
-    public void setAppointmentDate(Date appointmentDate) {
+    public void setAppointmentDate(String appointmentDate) {
         this.appointmentDate = appointmentDate;
     }
 

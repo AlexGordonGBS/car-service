@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -91,7 +90,7 @@ public class AppointmentController {
      * @return list of appointments
      */
     @GetMapping(value = "/appointments/range/{fromDate}/{toDate}", produces = {"application/json"})
-    public ResponseEntity<List<AppointmentEntity>> getByDateRange(@NotBlank @PathVariable Date fromDate, @NotBlank @PathVariable Date toDate) {
+    public ResponseEntity<List<AppointmentEntity>> getByDateRange(@NotBlank @PathVariable String fromDate, @NotBlank @PathVariable String toDate) {
         return new ResponseEntity<>(appointmentService.getByDateRange(fromDate, toDate), HttpStatus.OK);
     }
 

@@ -14,6 +14,9 @@ import java.util.List;
 @Repository
 public interface AppointmentRepo extends CrudRepository<AppointmentEntity, String> {
 
+    @Override
+    List<AppointmentEntity> findAll();
+
     List<AppointmentEntity> findAllByAppointmentDateBetween(Date fromDate, Date toDate);
 
 }
