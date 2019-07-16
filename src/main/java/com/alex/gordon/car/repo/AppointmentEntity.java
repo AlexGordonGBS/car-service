@@ -74,6 +74,14 @@ public class AppointmentEntity {
         this.price = price;
     }
 
+    public Date getAppointmentDate() {
+        return appointmentDate;
+    }
+
+    public void setAppointmentDate(Date appointmentDate) {
+        this.appointmentDate = appointmentDate;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
