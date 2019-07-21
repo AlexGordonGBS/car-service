@@ -84,7 +84,7 @@ a requested appointment JSON image. </p>
 ```
 * start the service:
 ```
-    java -jar build/libs/car-service-0.0.1-SNAPSHOT.jar
+     gradle bootRun
 ```
 * PostMan collection to test the project can be found here:
 ```
