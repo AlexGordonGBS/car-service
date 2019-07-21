@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "89bb739f-dddc-4c7f-b59b-9af208f00d02",
+		"name": "car-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST CREATE Appointment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"appointmentDate\": \"2019-07-28\",\n  \"appointmentStatus\": \"SCHEDULED\",\n  \"client\": \"Alex Gordon\",\n  \"car\": \"Toyota Camry 2017\",\n  \"description\": \"Check engine light is on\",\n  \"price\": 30.22\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/appointments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT UPDATE Appointment",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"appointmentDate\": \"2019-08-13\",\n    \"appointmentStatus\": \"WIP\",\n    \"client\": \"Alex Gordon\",\n    \"car\": \"Honda 2017\",\n    \"description\": \"Check engine light is on\",\n    \"price\": 120.00\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/appointments/103e91b2-ec6f-443f-a94e-9e238feca297",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointments",
+						"103e91b2-ec6f-443f-a94e-9e238feca297"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET by ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/appointments/103e91b2-ec6f-443f-a94e-9e238feca297qqq",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointments",
+						"103e91b2-ec6f-443f-a94e-9e238feca297qqq"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET by date range",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/appointments/range/2019-07-19/2019-07-28",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointments",
+						"range",
+						"2019-07-19",
+						"2019-07-28"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"appointmentDate\": \"2019-07-20\",\n  \"appointmentStatus\": \"SCHEDULED\",\n  \"client\": \"Alex Gordon\",\n  \"car\": \"Toyota Camry 2017\",\n  \"description\": \"Check engine light is on\",\n  \"price\": 115.97\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/appointments/bd289713-cc89-4070-bd6d-7480f8f03f4b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointments",
+						"bd289713-cc89-4070-bd6d-7480f8f03f4b"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -3,7 +3,6 @@ package com.alex.gordon.car.repo;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -16,8 +15,6 @@ public interface AppointmentRepo extends CrudRepository<AppointmentEntity, Strin
 
     @Override
     List<AppointmentEntity> findAll();
-
-    List<AppointmentEntity> findAllByAppointmentDateBetween(Date fromDate, Date toDate);
 
 }
 
