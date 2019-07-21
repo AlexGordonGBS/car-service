@@ -49,7 +49,7 @@ public class AppointmentController {
     @DeleteMapping(value = "/appointments/{id}", produces = {"application/json"})
     public ResponseEntity<?> deleteById(@PathVariable String id) {
         appointmentService.deleteById(id);
-        // DELETE operation is expected to be idempotent, therefore delete an already deleted item is operation successful!!!
+        // DELETE operation is expected to be idempotent, therefore deleting an already deleted item is the successful operation!!!
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
